@@ -128,7 +128,7 @@ const History = (props) => {
     });
   };
   const filterScheduleWithClass = (clazz, schedules) => {
-    return schedules.filter((sc) => sc.classes.name == clazz);
+    return schedules?.filter((sc) => sc.classes.name == clazz);
   };
   const nav = useNavigation();
   useLayoutEffect(() => {

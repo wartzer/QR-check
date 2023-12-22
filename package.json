@@ -15,9 +15,7 @@
     "@react-navigation/native-stack": "^6.9.17",
     "expo": "~49.0.15",
     "expo-barcode-scanner": "~12.5.3",
-    "expo-file-system": "~15.4.4",
     "expo-image-picker": "~14.3.2",
-    "expo-media-library": "~15.4.1",
     "expo-status-bar": "~1.6.0",
     "firebase": "10.6.0",
     "mobx": "^6.11.0",
@@ -34,7 +32,9 @@
     "react-native-svg": "^13.14.0",
     "react-native-tab-view": "^3.5.2",
     "react-native-toast-message": "^2.1.7",
-    "react-native-vector-icons": "^10.0.2"
+    "react-native-vector-icons": "^10.0.2",
+    "expo-file-system": "~15.4.4",
+    "expo-media-library": "~15.4.1"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0"

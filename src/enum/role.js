@@ -3,4 +3,4 @@ export const ROLES = {
   STUDENT: "STUDENT",
 };
 export const DEFAULT_AVT =
-  "https://firebasestorage.googleapis.com/v0/b/khanh-dev-portfolio.appspot.com/o/user.png?alt=media&token=cb9939c2-45ee-4d60-9bcd-4dddf8215398";
+  "https://www.google.com/url?sa=i&url=https%3A%2F%2Fcellphones.com.vn%2Fsforum%2Favatar-trang&psig=AOvVaw0mb-wUeH8zWmncJey9hdKj&ust=1703296601954000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCLDtiLr4oYMDFQAAAAAdAAAAABAD";
