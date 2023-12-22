@@ -4,12 +4,13 @@ import { getFirestore } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCo2k_SyjOSOpxaaiWlCJvEn0CIEl23JCk",
-  authDomain: "qr-atentdance.firebaseapp.com",
-  projectId: "qr-atentdance",
-  storageBucket: "qr-atentdance.appspot.com",
-  messagingSenderId: "285780628611",
-  appId: "1:285780628611:web:51200a989bc0fd535fb7b6",
+  apiKey: "AIzaSyCQ71t3Jf7JoVvdNPaP7bWl0k2vQsn7jYc",
+  authDomain: "qr-app-98977.firebaseapp.com",
+  projectId: "qr-app-98977",
+  storageBucket: "qr-app-98977.appspot.com",
+  messagingSenderId: "1028312354491",
+  appId: "1:1028312354491:web:a073778127df2c8266a39e",
+  measurementId: "G-91F94Q68M1"
 };
 
 // Initialize Firebase

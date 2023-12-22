@@ -36,6 +36,20 @@ class ScheduleStore {
     });
     this.setClasses(rss);
   };
+  uniqueArrayWithClasses = (array)=>{
+    if(array.length <= 0) return;
+    const returnArr = [array[0]];
+    for(let cs of array){
+      for(let cs_ of returnArr){
+        if(cs.user?.name == cs_.user?.name){
+          if(cs.classes?.name != cs_.classes?.name){
+              returnArr.push(cs);
+          }
+        }
+      }
+    }
+    return returnArr;
+  }
   listenSchedule = async (teacherId) => {
     try {
       let start = new Date();
@@ -55,19 +69,24 @@ class ScheduleStore {
         querySnapshot.docChanges().forEach((change) => {
           if (change.type == "added") {
             if (querySnapshot.docChanges().length == 1) {
-              if (change.doc.data().teacher_id == authStore.user.id) {
+              let data = change.doc.data(); 
+              if (data.teacher_id == authStore.user.id) {
                 mine = true;
               }
             }
-            schedule.push(change.doc.data());
+              schedule.push(change.doc.data());
           }
         });
-        if (mine) {
-          this.setNoti([0]);
-        }
+       
         if (schedule.length == 1) {
           schedule = [...schedule, ...this.schedules];
+        }else{
+          schedule = this.uniqueArrayWithClasses(schedule);
         }
+        if (mine && schedule.length > this.schedules.length) {
+          this.setNoti([0]);
+        }
+        
         this.setSchedule(schedule);
       });
     } catch (e) {
@@ -81,9 +100,9 @@ class ScheduleStore {
     try {
       const q = query(
         collection(this.DB, "schedules"),
-        where("checked_at", ">=", start),
-        where("checked_at", "<=", end),
-        where("teacher_id", "==", teacherId)
+        where("checked_at", ">=", checkData.start),
+        where("checked_at", "<=", checkData.end),
+        where("teacher_id", "==", checkData.teacher_id)
       );
       const rs = await getDocs(q);
       let canAdd = true;
