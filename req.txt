@@ -1,0 +1,7 @@
+﻿+ notif đã điểm danh
++ đăng xuất
++ cải thiện ui
++ profile
++ chỉnh sửa profile
++ chỉnh cái datetime picker 1
++ đăng ký
