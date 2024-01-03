@@ -24,7 +24,7 @@ const Teacher = (props) => {
     if (Object.keys(authStore.updateInfo).length <= 0) {
       Toast.show({
         type: "info",
-        text1: "Nothing change",
+        text1: "Không thông tin nào được thay đổi",
       });
       return;
     }
@@ -54,7 +54,7 @@ const Teacher = (props) => {
         }}
       >
         <Text style={{ textAlign: "start", marginBottom: 4, width: "90%" }}>
-          Teacher Name
+          Tên Giáo viên
         </Text>
         <TextInput
           onChangeText={(text) =>
@@ -81,7 +81,7 @@ const Teacher = (props) => {
         }}
       >
         <Text style={{ textAlign: "start", marginBottom: 4, width: "90%" }}>
-          Teacher Email
+          Email Giáo viên
         </Text>
         <TextInput
           onChangeText={(text) =>
@@ -100,7 +100,7 @@ const Teacher = (props) => {
         />
       </View>
       <Button onPress={handleUpdateProfile} mode="contained">
-        Update
+        Cập nhật
       </Button>
     </ScrollView>
   );

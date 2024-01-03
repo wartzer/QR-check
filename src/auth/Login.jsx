@@ -11,7 +11,7 @@ const Login = () => {
   const nav = useNavigation();
   const handleLogin = async () => {
     if (loginData.email.trim() === "" || loginData.password.trim() == "") {
-      Alert.alert("Form Invalid", "Please fill data to form");
+      Alert.alert("Lỗi", "Vui lòng điền đầy đủ thông tin");
       return;
     }
     await authStore.login(loginData);
@@ -28,7 +28,7 @@ const Login = () => {
   return (
     <VStack flex={1} space={20} justifyContent={"center"} alignItems={"center"}>
       <Text variant="displayMedium" style={{ color: "black" }}>
-        login
+        ĐĂNG NHẬP
       </Text>
       <TextInput
         onChangeText={(text) => setLoginData({ ...loginData, email: text })}
@@ -39,7 +39,7 @@ const Login = () => {
       <TextInput
         onChangeText={(text) => setLoginData({ ...loginData, password: text })}
         style={{ width: "90%" }}
-        label="Password"
+        label="Mật khẩu"
         secureTextEntry
         right={<TextInput.Icon icon="eye" />}
       />
@@ -48,14 +48,14 @@ const Login = () => {
       ) : (
         <>
           <Button mode="contained" onPress={handleLogin}>
-            Login
+            Đăng nhập
           </Button>
           <TouchableOpacity
             onPress={() => {
               nav.navigate("reg");
             }}
           >
-            <Text>Register</Text>
+            <Text>Đăng ký</Text>
           </TouchableOpacity>
         </>
       )}

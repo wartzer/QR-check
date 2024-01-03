@@ -30,7 +30,7 @@ const Register = () => {
       Object.keys(regData.classes).length == 0 ||
       regData.name.trim() == ""
     ) {
-      Alert.alert("Form Invalid", "Please fill data to form");
+      Alert.alert("Lỗi", "Vui lòng điền đầy đủ thông tin");
       return;
     }
     await authStore.register(regData);
@@ -38,7 +38,7 @@ const Register = () => {
   return (
     <VStack flex={1} space={20} justifyContent={"center"} alignItems={"center"}>
       <Text variant="displayMedium" style={{ color: "black" }}>
-        Register
+        ĐĂNG KÝ
       </Text>
       <TextInput
         onChangeText={(text) => setRegData({ ...regData, email: text })}
@@ -49,13 +49,13 @@ const Register = () => {
       <TextInput
         onChangeText={(text) => setRegData({ ...regData, name: text })}
         style={{ width: "90%" }}
-        label="Name"
+        label="Họ tên"
         right={<TextInput.Icon icon={"account"} />}
       />
       <TextInput
         onChangeText={(text) => setRegData({ ...regData, password: text })}
         style={{ width: "90%" }}
-        label="Password"
+        label="Mật khẩu"
         secureTextEntry
         right={<TextInput.Icon icon="eye" />}
       />
@@ -64,13 +64,13 @@ const Register = () => {
           setRegData({ ...regData, confirmPassword: text })
         }
         style={{ width: "90%" }}
-        label="Confirm Password"
+        label="Xác nhận mật khẩu"
         secureTextEntry
         right={<TextInput.Icon icon="eye" />}
       />
       <RNPickerSelect
         style={{ width: "90%" }}
-        placeholder={{ label: "Select class" }}
+        placeholder={{ label: "Chọn lớp" }}
         onValueChange={(value) =>
           setRegData({ ...regData, classes: { name: value } })
         }
@@ -86,14 +86,14 @@ const Register = () => {
       ) : (
         <>
           <Button mode="contained" onPress={handleLogin}>
-            Register
+            Đăng ký
           </Button>
           <TouchableOpacity
             onPress={() => {
               nav.navigate("login");
             }}
           >
-            <Text>Return</Text>
+            <Text>Quay lại</Text>
           </TouchableOpacity>
         </>
       )}

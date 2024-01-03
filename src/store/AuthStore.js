@@ -54,7 +54,7 @@ class AuthStore {
             query(collection(this.DB, "users"), where("email", "==", email))
           );
           if (doc.docs.length > 0) {
-            Alert.alert("Error", "Email has been taken");
+            Alert.alert("Lỗi ", "Email đã được sử dụng");
             this.setLogging(false);
             return;
           }

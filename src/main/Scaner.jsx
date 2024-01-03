@@ -26,15 +26,15 @@ export const Scanner = () => {
       let time = new Date().getTime();
 
       if (time < checkData?.start) {
-        Alert.alert("Error", "Time check incorrect u checked in early!");
+        Alert.alert("Lỗi", "Bạn đến lớp hơi sớm!");
         return;
       }
       if (time > checkData?.end) {
-        Alert.alert("Error", "Time check incorrect u checked in late!");
+        Alert.alert("Lỗi", "Bạn đến lớp muộn rồi!");
         return;
       }
       if (authStore.user.classes.name != checkData.classes.name) {
-        Alert.alert("Error", "Invalid classes");
+        Alert.alert("Lỗi", "Không tìm thấy lớp học");
         return;
       }
       if (time >= checkData?.start && time <= checkData?.end) {
@@ -48,7 +48,7 @@ export const Scanner = () => {
         };
         scheduleStore.checked(scheduleData);
       } else {
-        Alert.alert("Error", "Time check incorrect u checked late!");
+        Alert.alert("Lỗi", "Bạn đến lớp muộn rồi!");
       }
     }
   };
@@ -68,8 +68,8 @@ export const Scanner = () => {
       />
       {scanned && (
         <VStack flex={1} justifyContent={'center'} alginItems={'center'}>
-        <Button title={"Tap to Scan Again"} onPress={() => setScanned(false)} />
-        <Button title={"Back to home screen"} onPress={() => {
+        <Button title={"Quét lại mã"} onPress={() => setScanned(false)} />
+        <Button title={"Trở về trang chủ"} onPress={() => {
               nav.navigate('home');
         }} />
         </VStack>

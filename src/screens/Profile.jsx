@@ -15,7 +15,7 @@ const Profile = ({ route, navigation }) => {
       if (rs) {
         setUser(rs);
       } else {
-        Toast.show({ type: "error", text1: "No student found" });
+        Toast.show({ type: "Lỗi", text1: "Không tìm thấy học sinh" });
         navigation.goBack();
       }
     };

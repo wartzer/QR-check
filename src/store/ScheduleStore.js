@@ -102,7 +102,8 @@ class ScheduleStore {
         collection(this.DB, "schedules"),
         where("checked_at", ">=", checkData.start),
         where("checked_at", "<=", checkData.end),
-        where("teacher_id", "==", checkData.teacher_id)
+        where("teacher_id", "==", checkData.teacher_id),
+        
       );
       const rs = await getDocs(q);
       let canAdd = true;
@@ -119,7 +120,7 @@ class ScheduleStore {
         return;
       }
       addDoc(collection(this.DB, "schedules"), checkData);
-      Alert.alert("Success", "Check in success");
+      Alert.alert("Thành công", "Bạn đã điểm danh thành công");
     } catch (e) {
       console.log(e);
     }

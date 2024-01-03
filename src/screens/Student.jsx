@@ -17,7 +17,7 @@ const Student = (props) => {
     if (Object.keys(authStore.updateInfo).length <= 0) {
       Toast.show({
         type: "info",
-        text1: "Nothing change",
+        text1: "Không thông tin nào được thay đổi",
       });
       return;
     }
@@ -47,7 +47,7 @@ const Student = (props) => {
         }}
       >
         <Text style={{ textAlign: "start", marginBottom: 4, width: "90%" }}>
-          Student Name
+          Tên Học sinh
         </Text>
         <TextInput
           onChangeText={(text) =>
@@ -73,7 +73,7 @@ const Student = (props) => {
         }}
       >
         <Text style={{ textAlign: "start", marginBottom: 4, width: "90%" }}>
-          Student Email
+          Email Học sinh
         </Text>
         <TextInput
           onChangeText={(text) =>
@@ -90,9 +90,9 @@ const Student = (props) => {
           }}
         />
       </View>
-      <RNPickerSelect
+      {/* <RNPickerSelect
         style={{ width: "90%" }}
-        placeholder={{ label: "Select class" }}
+        placeholder={{ label: "Chọn lớp" }}
         onValueChange={(value) => {
           authStore.setUpdateInfo({ classes: { name: value } });
         }}
@@ -103,9 +103,9 @@ const Student = (props) => {
             value: val?.name,
           };
         })}
-      />
+      /> */}
       <Button onPress={handleUpdateProfile} mode="contained">
-        Update
+        Cập nhật
       </Button>
     </ScrollView>
   );

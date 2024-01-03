@@ -60,8 +60,8 @@ const History = (props) => {
     }).then(() => {
       MediaLibrary.saveToLibraryAsync(filePath).then(() => {
         Toast.show({
-          type: "success",
-          text1: "Save success",
+          type: "Thành công",
+          text1: "Lưu thành công",
         });
       });
     });
@@ -87,15 +87,15 @@ const History = (props) => {
   const SC_W = Dimensions.get("window").width;
   const handleGenerateCode = () => {
     if (parseInt(timeEnd) <= parseInt(timeStart)) {
-      Alert.alert("Error", "Time InValid");
+      Alert.alert("Lỗi", "Thời gian không được để trống");
       return;
     }
     if (timeEnd - timeStart < 10 * 60 * 1000) {
-      Alert.alert("Error", "Time end must more than time start 10 minutes");
+      Alert.alert("Lỗi", "Thời gian kết thúc phải lớn hơn thời gian bắt đầu 10 phút");
       return;
     }
     if (Object.keys(classes).length <= 0) {
-      Alert.alert("Error", "Select class");
+      Alert.alert("Lỗi", "Phải chọn lớp học");
       return;
     }
     const data = {
@@ -120,8 +120,8 @@ const History = (props) => {
       }).then(() => {
         MediaLibrary.saveToLibraryAsync(filePath).then(() => {
           Toast.show({
-            type: "success",
-            text1: "Save success",
+            type: "info",
+            text1: "Lưu thành công",
           });
         });
       });
@@ -137,8 +137,8 @@ const History = (props) => {
       scheduleStore.notifications.length > 0
     ) {
       Toast.show({
-        type: "success",
-        text1: "One more student checked in",
+        type: "info",
+        text1: "Thêm 1 học sinh vào lớp!",
       });
       scheduleStore.setNoti([]);
     }
@@ -168,7 +168,7 @@ const History = (props) => {
             }}
             mode="contained"
           >
-            <Text>Generate Code</Text>
+            <Text>Tạo mã</Text>
           </Button>
           <Button
             onPress={() => {
@@ -176,13 +176,13 @@ const History = (props) => {
             }}
             mode="contained"
           >
-            Save history
+            Lịch sử lưu
           </Button>
         </View>
       )}
       <>
         <Text style={{ fontSize: 26, marginVertical: 20, marginLeft: 10 }}>
-          List Student Checked In
+          Danh sách học sinh đã vào lớp
         </Text>
         <ScrollView>
           {authStore.user.classes.map((cl, index) => {
@@ -280,7 +280,7 @@ const History = (props) => {
                       new Date(timeStart).getMinutes() +
                       " : " +
                       (new Date(timeStart).getHours > 12 ? "PM" : "AM")
-                    : "Time Start"}
+                    : "Thời gian bắt đầu"}
                 </Text>
               </TouchableOpacity>
 
@@ -305,13 +305,13 @@ const History = (props) => {
                       new Date(timeEnd).getMinutes() +
                       " : " +
                       (new Date(timeEnd).getHours > 12 ? "PM" : "AM")
-                    : "Time End"}
+                    : "Thời gian kết thúc"}
                 </Text>
               </TouchableOpacity>
 
               <RNPickerSelect
                 style={{ width: "90%" }}
-                placeholder={{ label: "Select class" }}
+                placeholder={{ label: "Chọn lớp" }}
                 onValueChange={(value) => {
                   setClasses({ name: value });
                 }}
@@ -323,7 +323,7 @@ const History = (props) => {
                 })}
               />
               <Button onPress={handleGenerateCode} style={{ marginBottom: 12 }}>
-                Generate
+                Khởi tạo mã
               </Button>
               {value !== "" && (
                 <QRCode
@@ -353,7 +353,7 @@ const History = (props) => {
                     color={"black"}
                     size={26}
                   />
-                  <Text style={{ marginHorizontal: 6 }}>Save to library</Text>
+                  <Text style={{ marginHorizontal: 6 }}>Lưu vào thư viện</Text>
                 </TouchableOpacity>
               )}
             </View>
